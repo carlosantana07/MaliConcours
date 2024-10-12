@@ -589,7 +589,7 @@ var WorkerMessageHandler = {
           handler,
           task,
           sink,
-          normalizeWhitespace: data.normalizeWhitespace,
+          norMALIzeWhitespace: data.norMALIzeWhitespace,
           combineTextItems: data.combineTextItems
         }).then(function () {
           finishWorkerTask(task);
@@ -1323,7 +1323,7 @@ class Util {
     return [Math.sqrt(sx), Math.sqrt(sy)];
   }
 
-  static normalizeRect(rect) {
+  static norMALIzeRect(rect) {
     const r = rect.slice(0);
 
     if (rect[0] > rect[2]) {
@@ -1347,8 +1347,8 @@ class Util {
     const orderedX = [rect1[0], rect1[2], rect2[0], rect2[2]].sort(compare);
     const orderedY = [rect1[1], rect1[3], rect2[1], rect2[3]].sort(compare);
     const result = [];
-    rect1 = Util.normalizeRect(rect1);
-    rect2 = Util.normalizeRect(rect2);
+    rect1 = Util.norMALIzeRect(rect1);
+    rect2 = Util.norMALIzeRect(rect2);
 
     if (orderedX[0] === rect1[0] && orderedX[1] === rect2[0] || orderedX[0] === rect2[0] && orderedX[1] === rect1[0]) {
       result[0] = orderedX[1];
@@ -3044,7 +3044,7 @@ class Page {
   extractTextContent({
     handler,
     task,
-    normalizeWhitespace,
+    norMALIzeWhitespace,
     sink,
     combineTextItems
   }) {
@@ -3066,7 +3066,7 @@ class Page {
         stream: contentStream,
         task,
         resources: this.resources,
-        normalizeWhitespace,
+        norMALIzeWhitespace,
         combineTextItems,
         sink
       });
@@ -17987,7 +17987,7 @@ const CalRGBCS = function CalRGBCSClosure() {
   const BRADFORD_SCALE_INVERSE_MATRIX = new Float32Array([0.9869929, -0.1470543, 0.1599627, 0.4323053, 0.5183603, 0.0492912, -0.0085287, 0.0400428, 0.9684867]);
   const SRGB_D65_XYZ_TO_RGB_MATRIX = new Float32Array([3.2404542, -1.5371385, -0.4985314, -0.9692660, 1.8760108, 0.0415560, 0.0556434, -0.2040259, 1.0572252]);
   const FLAT_WHITEPOINT_MATRIX = new Float32Array([1, 1, 1]);
-  const tempNormalizeMatrix = new Float32Array(3);
+  const tempNorMALIzeMatrix = new Float32Array(3);
   const tempConvertMatrix1 = new Float32Array(3);
   const tempConvertMatrix2 = new Float32Array(3);
   const DECODE_L_CONSTANT = ((8 + 16) / 116) ** 3 / 8.0;
@@ -18063,7 +18063,7 @@ const CalRGBCS = function CalRGBCSClosure() {
     result[2] = XYZ_Flat[2] * Z_Scale + Z_Offset;
   }
 
-  function normalizeWhitePointToFlat(sourceWhitePoint, XYZ_In, result) {
+  function norMALIzeWhitePointToFlat(sourceWhitePoint, XYZ_In, result) {
     if (sourceWhitePoint[0] === 1 && sourceWhitePoint[2] === 1) {
       result[0] = XYZ_In[0];
       result[1] = XYZ_In[1];
@@ -18073,15 +18073,15 @@ const CalRGBCS = function CalRGBCSClosure() {
 
     const LMS = result;
     matrixProduct(BRADFORD_SCALE_MATRIX, XYZ_In, LMS);
-    const LMS_Flat = tempNormalizeMatrix;
+    const LMS_Flat = tempNorMALIzeMatrix;
     convertToFlat(sourceWhitePoint, LMS, LMS_Flat);
     matrixProduct(BRADFORD_SCALE_INVERSE_MATRIX, LMS_Flat, result);
   }
 
-  function normalizeWhitePointToD65(sourceWhitePoint, XYZ_In, result) {
+  function norMALIzeWhitePointToD65(sourceWhitePoint, XYZ_In, result) {
     const LMS = result;
     matrixProduct(BRADFORD_SCALE_MATRIX, XYZ_In, LMS);
-    const LMS_D65 = tempNormalizeMatrix;
+    const LMS_D65 = tempNorMALIzeMatrix;
     convertToD65(sourceWhitePoint, LMS, LMS_D65);
     matrixProduct(BRADFORD_SCALE_INVERSE_MATRIX, LMS_D65, result);
   }
@@ -18101,11 +18101,11 @@ const CalRGBCS = function CalRGBCSClosure() {
     XYZ[1] = Y;
     XYZ[2] = Z;
     const XYZ_Flat = tempConvertMatrix2;
-    normalizeWhitePointToFlat(cs.whitePoint, XYZ, XYZ_Flat);
+    norMALIzeWhitePointToFlat(cs.whitePoint, XYZ, XYZ_Flat);
     const XYZ_Black = tempConvertMatrix1;
     compensateBlackPoint(cs.blackPoint, XYZ_Flat, XYZ_Black);
     const XYZ_D65 = tempConvertMatrix2;
-    normalizeWhitePointToD65(FLAT_WHITEPOINT_MATRIX, XYZ_Black, XYZ_D65);
+    norMALIzeWhitePointToD65(FLAT_WHITEPOINT_MATRIX, XYZ_Black, XYZ_D65);
     const SRGB = tempConvertMatrix1;
     matrixProduct(SRGB_D65_XYZ_TO_RGB_MATRIX, XYZ_D65, SRGB);
     dest[destOffset] = sRGBTransferFunction(SRGB[0]) * 255;
@@ -18569,7 +18569,7 @@ class Annotation {
 
   setRectangle(rectangle) {
     if (Array.isArray(rectangle) && rectangle.length === 4) {
-      this.rectangle = _util.Util.normalizeRect(rectangle);
+      this.rectangle = _util.Util.norMALIzeRect(rectangle);
     } else {
       this.rectangle = [0, 0, 0, 0];
     }
@@ -19253,7 +19253,7 @@ class LineAnnotation extends MarkupAnnotation {
   constructor(parameters) {
     super(parameters);
     this.data.annotationType = _util.AnnotationType.LINE;
-    this.data.lineCoordinates = _util.Util.normalizeRect(parameters.dict.getArray("L"));
+    this.data.lineCoordinates = _util.Util.norMALIzeRect(parameters.dict.getArray("L"));
   }
 
 }
@@ -20197,10 +20197,10 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
     }
   };
 
-  function normalizeBlendMode(value, parsingArray = false) {
+  function norMALIzeBlendMode(value, parsingArray = false) {
     if (Array.isArray(value)) {
       for (let i = 0, ii = value.length; i < ii; i++) {
-        const maybeBM = normalizeBlendMode(value[i], true);
+        const maybeBM = norMALIzeBlendMode(value[i], true);
 
         if (maybeBM) {
           return maybeBM;
@@ -20442,7 +20442,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
       var bbox = dict.getArray("BBox");
 
       if (Array.isArray(bbox) && bbox.length === 4) {
-        bbox = _util.Util.normalizeRect(bbox);
+        bbox = _util.Util.norMALIzeRect(bbox);
       } else {
         bbox = null;
       }
@@ -20818,7 +20818,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
             break;
 
           case "BM":
-            gStateObj.push([key, normalizeBlendMode(value)]);
+            gStateObj.push([key, norMALIzeBlendMode(value)]);
             break;
 
           case "SMask":
@@ -21505,7 +21505,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
       task,
       resources,
       stateManager = null,
-      normalizeWhitespace = false,
+      norMALIzeWhitespace = false,
       combineTextItems = false,
       sink,
       seenStyles = Object.create(null)
@@ -21631,7 +21631,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
         var str = textChunk.str.join("");
         var bidiResult = (0, _bidi.bidi)(str, -1, textChunk.vertical);
         return {
-          str: normalizeWhitespace ? replaceWhitespace(bidiResult.str) : bidiResult.str,
+          str: norMALIzeWhitespace ? replaceWhitespace(bidiResult.str) : bidiResult.str,
           dir: bidiResult.dir,
           width: textChunk.width,
           height: textChunk.height,
@@ -21665,10 +21665,10 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           }
 
           var glyphUnicode = glyph.unicode;
-          var NormalizedUnicodes = (0, _unicode.getNormalizedUnicodes)();
+          var NorMALIzedUnicodes = (0, _unicode.getNorMALIzedUnicodes)();
 
-          if (NormalizedUnicodes[glyphUnicode] !== undefined) {
-            glyphUnicode = NormalizedUnicodes[glyphUnicode];
+          if (NorMALIzedUnicodes[glyphUnicode] !== undefined) {
+            glyphUnicode = NorMALIzedUnicodes[glyphUnicode];
           }
 
           glyphUnicode = (0, _unicode.reverseIfRtl)(glyphUnicode);
@@ -22028,7 +22028,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                   task,
                   resources: xobj.dict.get("Resources") || resources,
                   stateManager: xObjStateManager,
-                  normalizeWhitespace,
+                  norMALIzeWhitespace,
                   combineTextItems,
                   sink: sinkWrapper,
                   seenStyles
@@ -35475,7 +35475,7 @@ function isRTLRangeFor(value) {
  }
  return false;
 }
-var getNormalizedUnicodes = getLookupTableFactory(function (t) {
+var getNorMALIzedUnicodes = getLookupTableFactory(function (t) {
  t["\u00A8"] = "\u0020\u0308";
  t["\u00AF"] = "\u0020\u0304";
  t["\u00B4"] = "\u0020\u0301";
@@ -36868,7 +36868,7 @@ function reverseIfRtl(chars) {
 exports.mapSpecialUnicodeValues = mapSpecialUnicodeValues;
 exports.reverseIfRtl = reverseIfRtl;
 exports.getUnicodeRangeFor = getUnicodeRangeFor;
-exports.getNormalizedUnicodes = getNormalizedUnicodes;
+exports.getNorMALIzedUnicodes = getNorMALIzedUnicodes;
 exports.getUnicodeForGlyph = getUnicodeForGlyph;
 
 /***/ }),
@@ -38641,7 +38641,7 @@ Shadings.RadialAxial = function RadialAxialClosure() {
     const bbox = dict.getArray("BBox");
 
     if (Array.isArray(bbox) && bbox.length === 4) {
-      this.bbox = _util.Util.normalizeRect(bbox);
+      this.bbox = _util.Util.norMALIzeRect(bbox);
     } else {
       this.bbox = null;
     }
@@ -39381,7 +39381,7 @@ Shadings.Mesh = function MeshClosure() {
     const bbox = dict.getArray("BBox");
 
     if (Array.isArray(bbox) && bbox.length === 4) {
-      this.bbox = _util.Util.normalizeRect(bbox);
+      this.bbox = _util.Util.norMALIzeRect(bbox);
     } else {
       this.bbox = null;
     }
@@ -39473,7 +39473,7 @@ Shadings.Dummy = function DummyClosure() {
 function getTilingPatternIR(operatorList, dict, args) {
   const matrix = dict.getArray("Matrix");
 
-  const bbox = _util.Util.normalizeRect(dict.getArray("BBox"));
+  const bbox = _util.Util.norMALIzeRect(dict.getArray("BBox"));
 
   const xstep = dict.get("XStep");
   const ystep = dict.get("YStep");

@@ -548,7 +548,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         
@@ -767,7 +767,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         
@@ -973,7 +973,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         
@@ -1191,7 +1191,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         
@@ -1405,7 +1405,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         
@@ -1805,7 +1805,7 @@ function loadMinistere(){
     listMinistry.push("Éducation Nationale, de l'Alphabétisation et de la Promotion des Langues Nationales (MENA-PLN)");
     listMinistry.push("Environnement, de l'Économie Verte et du Changement Climatique (MEEVCC)");
     listMinistry.push("Femme, de la Solidarité Nationale, de la Famille et de l'Action Humanitaire");
-    listMinistry.push("Fonction Publique, du Travail et de la Protection Sociale (MFPTPS)");
+    listMinistry.push("Fonction Publique, du Travail et de la Protection Sociale (MALI)");
     listMinistry.push("Infrastructures (MI)");
     listMinistry.push("Mines et Carrières (MMC)");
     listMinistry.push("Jeunesse et de la Promotion de l'entrepreunariat des Jeunes (MJPEJ)");
@@ -3078,7 +3078,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         //=====================================================================
@@ -3304,7 +3304,7 @@ postData({ login: true })
        // var image = document.createElement("img");
         //image.width = "50";
         //image.height = "50";
-        //image.src = "../images/BF.png";
+        //image.src = "../images/MALI.png";
         //setting the div ids 
         //=====================================================================
         //=====================================================================

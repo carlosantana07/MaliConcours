@@ -101,8 +101,8 @@ cross-site scripting (XSS) attacks.
 <p>Hello, <%- myHtml %>.</p>
 <p>Hello, <%= myHtml %>.</p>
 
-<p>Hello, <%- myMaliciousHtml %>.</p>
-<p>Hello, <%= myMaliciousHtml %>.</p>
+<p>Hello, <%- myMALIciousHtml %>.</p>
+<p>Hello, <%= myMALIciousHtml %>.</p>
 ```
 
 ##### Locals
@@ -110,7 +110,7 @@ cross-site scripting (XSS) attacks.
 ```json
 {
   "myHtml": "<strong>Timothy</strong>"
-, "myMaliciousHtml": "</p><script>document.write()</script><p>"
+, "myMALIciousHtml": "</p><script>document.write()</script><p>"
 }
 ```
 

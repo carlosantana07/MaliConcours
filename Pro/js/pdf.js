@@ -862,7 +862,7 @@ class Util {
     return [Math.sqrt(sx), Math.sqrt(sy)];
   }
 
-  static normalizeRect(rect) {
+  static norMALIzeRect(rect) {
     const r = rect.slice(0);
 
     if (rect[0] > rect[2]) {
@@ -886,8 +886,8 @@ class Util {
     const orderedX = [rect1[0], rect1[2], rect2[0], rect2[2]].sort(compare);
     const orderedY = [rect1[1], rect1[3], rect2[1], rect2[3]].sort(compare);
     const result = [];
-    rect1 = Util.normalizeRect(rect1);
-    rect2 = Util.normalizeRect(rect2);
+    rect1 = Util.norMALIzeRect(rect1);
+    rect2 = Util.norMALIzeRect(rect2);
 
     if (orderedX[0] === rect1[0] && orderedX[1] === rect2[0] || orderedX[0] === rect2[0] && orderedX[1] === rect1[0]) {
       result[0] = orderedX[1];
@@ -1734,13 +1734,13 @@ class PDFPageProxy {
   }
 
   streamTextContent({
-    normalizeWhitespace = false,
+    norMALIzeWhitespace = false,
     disableCombineTextItems = false
   } = {}) {
     const TEXT_CONTENT_CHUNK_SIZE = 100;
     return this._transport.messageHandler.sendWithStream("GetTextContent", {
       pageIndex: this._pageIndex,
-      normalizeWhitespace: normalizeWhitespace === true,
+      norMALIzeWhitespace: norMALIzeWhitespace === true,
       combineTextItems: disableCombineTextItems !== true
     }, {
       highWaterMark: TEXT_CONTENT_CHUNK_SIZE,
@@ -9424,7 +9424,7 @@ class AnnotationElement {
     let height = data.rect[3] - data.rect[1];
     container.setAttribute("data-annotation-id", data.id);
 
-    const rect = _util.Util.normalizeRect([data.rect[0], page.view[3] - data.rect[1] + page.view[1], data.rect[2], page.view[3] - data.rect[3] + page.view[1]]);
+    const rect = _util.Util.norMALIzeRect([data.rect[0], page.view[3] - data.rect[1] + page.view[1], data.rect[2], page.view[3] - data.rect[3] + page.view[1]]);
 
     container.style.transform = `matrix(${viewport.transform.join(",")})`;
     container.style.transformOrigin = `-${rect[0]}px -${rect[1]}px`;

@@ -1020,13 +1020,13 @@
 			return undefined;
 		}
 
-		position = this.normalize(position);
+		position = this.norMALIze(position);
 
 		if (this._current !== position) {
 			var event = this.trigger('change', { property: { name: 'position', value: position } });
 
 			if (event.data !== undefined) {
-				position = this.normalize(event.data);
+				position = this.norMALIze(event.data);
 			}
 
 			this._current = position;
@@ -1053,7 +1053,7 @@
 	 * @param {Number} position - The absolute position of the new item.
 	 */
 	Owl.prototype.reset = function(position) {
-		position = this.normalize(position);
+		position = this.norMALIze(position);
 
 		if (position === undefined) {
 			return;
@@ -1070,13 +1070,13 @@
 	};
 
 	/**
-	 * Normalizes an absolute or a relative position for an item.
+	 * NorMALIzes an absolute or a relative position for an item.
 	 * @public
-	 * @param {Number} position - The absolute or relative position to normalize.
+	 * @param {Number} position - The absolute or relative position to norMALIze.
 	 * @param {Boolean} [relative=false] - Whether the given position is relative or not.
-	 * @returns {Number} - The normalized position.
+	 * @returns {Number} - The norMALIzed position.
 	 */
-	Owl.prototype.normalize = function(position, relative) {
+	Owl.prototype.norMALIze = function(position, relative) {
 		var n = (relative ? this._items.length : this._items.length + this._clones.length);
 
 		if (!$.isNumeric(position) || n < 1) {
@@ -1099,9 +1099,9 @@
 	 * @returns {Number} - The converted position.
 	 */
 	Owl.prototype.relative = function(position) {
-		position = this.normalize(position);
+		position = this.norMALIze(position);
 		position = position - this._clones.length / 2;
-		return this.normalize(position, true);
+		return this.norMALIze(position, true);
 	};
 
 	/**
@@ -1165,7 +1165,7 @@
 			return this._items.slice();
 		}
 
-		position = this.normalize(position, true);
+		position = this.norMALIze(position, true);
 		return this._items[position];
 	};
 
@@ -1180,7 +1180,7 @@
 			return this._mergers.slice();
 		}
 
-		position = this.normalize(position, true);
+		position = this.norMALIze(position, true);
 		return this._mergers[position];
 	};
 
@@ -1388,7 +1388,7 @@
 	 * @param {Number} [position] - The relative position at which to insert the item otherwise the item will be added to the end.
 	 */
 	Owl.prototype.add = function(content, position) {
-		position = position === undefined ? this._items.length : this.normalize(position, true);
+		position = position === undefined ? this._items.length : this.norMALIze(position, true);
 
 		this.trigger('add', { content: content, position: position });
 
@@ -1414,7 +1414,7 @@
 	 * @param {Number} position - The relative position of the item to remove.
 	 */
 	Owl.prototype.remove = function(position) {
-		position = this.normalize(position, true);
+		position = this.norMALIze(position, true);
 
 		if (position === undefined) {
 			return;
