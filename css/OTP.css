@@ -1,0 +1,50 @@
+.new-login-area{
+  padding:24px;
+  border-radius: 5px 20px 5px;  
+}
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+label {
+  font-size: 12px;
+}
+.request-otp-header {
+  margin: 40px 0px;
+}
+.login-label label {
+  color: #e6b706;
+  font-weight: 600;
+}
+.input-edit {
+  border: none !important;
+  border-bottom: 2px solid #ccc !important;
+  padding: 6px 0px;
+  opacity: 0.8;
+  width: 200px;
+}
+.input-edit:focus {
+  border-bottom-color: #e6b706 !important;
+  box-shadow: none;
+  outline: 0;
+}
+
+.request-otp {
+  margin-top: 40px;
+  background: linear-gradient(#e6b706, #e6b706);
+  font-size: 14px;
+  color: #fff;
+}
+.request-otp:focus {
+  box-shadow: none;
+}
+.fa-chevron-left {
+  cursor: pointer;
+}
+.resend-otp{
+  margin-top:6px;
+  cursor:pointer;
+}
+wrap{
+    height: 100%;
+}

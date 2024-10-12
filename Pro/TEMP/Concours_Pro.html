@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link rel="shortcut icon" href="../images/BF.png"/>
+		<title>Concours | Econcours</title>
+
+		<link rel='stylesheet' href='../css/style.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='../css/custom.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='../css/font-awesome.min.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='../css/jquery.datetimepicker.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='../css/chosen.css' type='text/css' media='all'/>
+        <link href="../css/docs2.css" rel="stylesheet"><!--  template structure css -->
+
+        <link href="../css/loader.css" rel="stylesheet"><!--  loader css -->
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	</head>
+	<body  onload="loadConcoursPro()">
+    	<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+		</div>
+		<div class="site">
+			<header class="noo-header" id="noo-header">
+				<div class="navbar-wrapper">
+					<div class="navbar navbar-default fixed-top shrinkable">
+						<div class="container-boxed max">
+							<div class="navbar-header">
+								<h1 class="sr-only">MFPTPS</h1> 
+								<a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".noo-navbar-collapse">
+									<span class="sr-only">Navigation</span>
+									<i class="fa fa-bars"></i>
+								</a>
+								<a class="navbar-toggle member-navbar-toggle collapsed" data-toggle="collapse" data-target=".noo-user-navbar-collapse">
+									<i class="fa fa-user" id="mobileUser"></i>
+								</a>
+								<a href="Acceuil.html" class="navbar-brand">
+									<img class="noo-logo-img noo-logo-normal" src="../images/BF.png" alt="">
+									<img class="noo-logo-mobile-img noo-logo-normal" src="../images/BF.png" alt="">
+								</a>
+							</div>  
+							<nav class="collapse navbar-collapse noo-user-navbar-collapse">
+								<ul class="navbar-nav sf-menu">
+                                    <li><a href="Profil_Candidat.html"><i class="fa fa-edit"></i>Mon Profil</a></li>
+                                    <li><a href="Candidat_Concours.html"><i class="fa fa-file-text-o"></i>Mes Concours</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="Candidat_Documents.html"><i class="fa fa-file-text-o"></i>Mes Documents</a></li>
+                                    <li><a href="import_document.html"><i class="fa fa-users"></i>Importer Documents</a></li>
+									<li>
+										<a href="#" onclick=deconnexion(); ><i class="fa fa-key"></i> Déconnexion</a>
+									</li>
+								</ul>
+							</nav>
+							<nav class="collapse navbar-collapse noo-navbar-collapse">
+								<ul class="navbar-nav sf-menu">
+									<li class="align-left">
+										<a href="Acceuil.html">Accueil</a>
+									</li>
+									<li class="align-left">
+										<a href="Concours.html">Concours</a>
+                                        <ul class="sub-menu">
+											<li><a href="Concours_Direct.html">Concours Directs</a></li>
+											<li><a href="Concours_Pro.html">Concours Professionnels</a></li>
+										</ul>
+									</li>
+									<li class="align-left">
+										<a href="Gouvernement.html">Ministères</a>
+									</li>
+									<li class="align-left">
+										<a href="Contact-us.html">Contactez-Nous</a>
+									</li>
+									<li class="align-left">
+										<a href="faq.html">Aide</a>
+									</li>
+                                    <li class="nav-item-member-profile login-link">
+										<a href="Profil_Candidat.html" class="sf-with-ul">
+											<span class="profile-name" id="profil"></span>
+											<span class="profile-avatar">
+												<img alt="" src="../images/user.jpg" height="40" width="40">
+											</span>
+										</a>
+										<ul class="sub-menu">
+											<li><a href="Profil_Candidat.html"><i class="fa fa-edit"></i>Mon Profil</a></li>
+											<li><a href="Candidat_Concours.html"><i class="fa fa-file-text-o"></i>Mes Concours</a></li>
+											<li class="divider"></li>
+											<li><a href="Candidat_Documents.html"><i class="fa fa-file-text-o"></i>Mes Documents</a></li>
+											<li><a href="import_document.html"><i class="fa fa-users"></i>Importer Documents</a></li>
+											<li><a href="#" onclick=deconnexion();><i class="fa fa-sign-out"></i>Déconnexion</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav> 
+                            <a><br>MFPTPS</a>   
+						</div>  
+					</div>  
+				</div>
+        <section class="breadcrumb">
+        	<div class="container">
+            	<ul>
+                	<li><a href="Concours.html">Tous les Concours</a></li>
+                    <li><a href="Concours_Direct.html">Concours Directs</a></li>
+                </ul>
+            </div>
+        </section>
+			</header>
+			<div class="container-wrap">
+				<div class="main-content container-boxed max offset">
+					<div class="row">
+						<div class="noo-sidebar col-md-4">
+							<div class="noo-sidebar-wrap">
+								<div class="widget widget_noo_advanced_search_widget">
+									<h4 class="widget-title">Recherche</h4>
+									<form class="widget-advanced-search">
+										<div class="form-group">
+											<label class="sr-only" for="search-keyword">Mots clés</label>
+											<input type="text" class="form-control" id="search" name="s" placeholder="Mots clés" value="" onkeyup="searchConcoursDirect()"/>
+										</div>
+										<div class="form-group">
+											<label class="h5" for="search-category">Tous les ministères/institutions</label>
+											<div class="advance-search-form-control">
+												<select name="category" class="form-control-chosen form-control" id="search-category" onchange="searchConcoursMinistereDirect()">
+													<option class="text-placeholder" value="">Choisir un ministère/institution</option>
+                                                    <option value="Administration">Administration Territoriale, de la Décentralisation et de la Cohésion Sociale (MATD-CS)</option>
+                                                    <option value="Affaires">Affaires Étrangères et de la Coopération (MAEC)</option>
+                                                    <option value="Agriculture">Agriculture et des Aménagements Hydro-Agricoles (MAAHA)</option>
+                                                    <option value="Autorité">Autorité Supérieure de Contrôle d'État et de lutte contre la Corruption (ASCE/LC)</option>
+                                                    <option value="Commerce">Commerce, de l'industrie et de l'Artisanat (MCIA)</option>
+                                                    <option value="Communication">Communication et des Relations avec le Parlement (MCRP)</option>
+                                                    <option value="Culture">Culture, des Arts et du Tourisme (MCAT)</option>
+                                                    <option value="Développement">Développement de l'Économie Numérique et des Postes (MDENP)</option>
+                                                    <option value="Droits">Droits Humains et de la Promotion Civique (MJDHPC)</option>
+                                                    <option value="Eau">Eau et de l'Assainissement (MEA)</option>
+                                                    <option value="Économie">Économie, des Finances et du Développement (MINEFID)</option>
+                                                    <option value="Éducation">Éducation Nationale, de l'Alphabétisation et de la Promotion des Langues Nationales (MENA-PLN)</option>
+                                                    <option value="Environnement">Environnement, de l'Économie Verte et du Changement Climatique (MEEVCC)</option>
+                                                    <option value="Femme">Femme, de la Solidarité Nationale, de la Famille et de l'Action Humanitaire</option>
+                                                    <option value="Fonction">Fonction Publique, du Travail et de la Protection Sociale (MFPTPS)</option>
+                                                    <option value="Infrastructures">Infrastructures (MI)</option>
+                                                    <option value="Mines">Mines et Carrières (MMC)</option>
+                                                    <option value="Jeunesse">Jeunesse et de la Promotion de l'entrepreunariat des Jeunes (MJPEJ)</option>
+                                                    <option value="Justice">Justice (MJ)</option>
+                                                    <option value="MRAH">Ressources Animales et Halieutiques (MRAH)</option>
+                                                    <option value="Santé">Santé(MS)</option>
+                                                    <option value="Sports">Sports et des Loisirs (MSL)</option>
+                                                    <option value="Urbanisme">Urbanisme et de l'Habitat (MUH)</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="h5">Niveau d'étude</label>
+											<div class="advance-search-form-control">
+												<select name="category" class="form-control-chosen form-control" id="search-academic" onchange="searchConcoursAcademic()">
+													<option class="text-placeholder" value="">Choisir un niveau d'étude</option>
+                                                    <option value="CEPE">CEPE</option>
+                                                    <option value="BEPC">BEPC</option>
+                                                    <option value="Baccalaureat">Baccalaureat</option>
+                                                    <option value="DEUG II">DEUG II</option>
+                                                    <option value="Licence">Licence</option>
+                                                    <option value="Licence LMD">Licence LMD</option>
+                                                    <option value="Master">Maitrise / Master</option>
+                                                    <option value="Doctorat">Doctorat</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="h5">Niveau cycle</label>
+											<div class="advance-search-form-control">
+												<select name="category" class="form-control-chosen form-control" id="search-cycle" onchange="searchConcoursCycle()">
+													<option class="text-placeholder" value="">Choisir un cycle</option>
+                                                    <option value="Cycle P">Cycle P</option>
+                                                    <option value="Cycle A">Cycle A</option>
+                                                    <option value="Cycle B">Cycle B</option>
+                                                    <option value="Cycle C">Cycle C</option>
+                                                    <option value="Cycle D">Cycle D</option>
+                                                    <option value="Cycle E">Cycle E</option>
+												</select>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div> 
+						<div class="noo-main col-md-8">
+							<div class="jobs posts-loop">
+								<div class="posts-loop-title">
+									<h3>Liste des concours professionnels</h3>
+								</div>
+								<div class="posts-loop-content" id="wrap-concours">
+									
+								</div>
+                                
+							</div>
+						</div>  
+					</div> 
+				</div> 
+                <br>
+                <br>
+                <br>
+                <br>
+			</div> 
+            <footer class="colophon site-info">
+				<div class="container-full">
+					<div class="footer-more">
+						<div class="container-boxed">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="noo-bottom-bar-content">
+										© 2020 Ministère de la Fonction Publique , du Travail et de la Protection Sociale | <a href="User_accecptance.html" style="color:White">Conditions d'utilisation</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>  
+			</footer>  
+		</div>  
+		<a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
+
+		<script type='text/javascript' src='../js/jquery.js'></script>
+		<script type='text/javascript' src='../js/jquery-migrate.min.js'></script>
+		<script type='text/javascript' src='../js/modernizr-2.7.1.min.js'></script>
+		<script type='text/javascript' src='../js/jquery.cookie.js'></script>
+		<script type='text/javascript' src='../js/jquery.blockUI.min.js'></script>
+		<script type='text/javascript' src='../js/imagesloaded.pkgd.min.js'></script>
+		<script type='text/javascript' src='../js/isotope-2.0.0.min.js'></script>
+		<script type='text/javascript' src='../js/jquery.touchSwipe.min.js'></script>
+		<script type='text/javascript' src='../js/bootstrap.min.js'></script>
+		<script type='text/javascript' src='../js/hoverIntent-r7.min.js'></script>
+		<script type='text/javascript' src='../js/superfish-1.7.4.min.js'></script>
+		<script type='text/javascript' src='../js/script.js'></script>
+		<script type='text/javascript' src='../js/chosen.jquery.min.js'></script>
+		<script type='text/javascript' src='../js/jquery.datetimepicker.js'></script>
+		<script type='text/javascript' src='../js/jquery.parallax-1.1.3.js'></script>
+		<script type='text/javascript' src='../js/jquery.carouFredSel-6.2.1-packed.js'></script>
+		<script type='text/javascript' src='../js/custom.js'></script>
+        <script type='text/javascript' src='../js/API.js'></script>
+        <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.js"></script>
+    <script type="text/javascript" src="../js/jquery.form-validator.min.js"></script>
+    <script type='text/javascript' src="maps.google.js"></script>
+    <script type="text/javascript" src="../js/map-styleMain.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script type="text/javascript" src="../js/coustem.js"></script>
+	</body>
+</html>

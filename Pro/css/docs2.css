@@ -1,0 +1,45 @@
+/*=-=-=-=-=-=-=-=-=-=-=- Section title start -=-=-=-=-=-=-=-=-=-=-=*/
+.section-title {text-align:center; display:block;}
+.section-title h2 {padding-bottom:20px; color:black; line-height:50px; position:relative;}
+.section-title h2:after {position:absolute; bottom:0px; left:50%; width:90px; margin-left:-45px; height:3px; background:#4d4d4d; content:"";}
+.section-title h2:before { border-left: 5px solid transparent;border-right: 5px solid transparent; border-bottom: 5px solid #4d4d4d; content:""; position:absolute; bottom:3px; left:50%; margin-left:-5px;}
+.section-title p {padding:19px 0 0 0; font-size:18px; color:#444; line-height:30px; display:inline-block; max-width:800px;}
+.section-title.white h2 {color:#fff; }
+.section-title.white h2:after {background:black; }
+.section-title.white h2:before {border-bottom: 5px solid black; }
+.section-title.white p {color:#fff; }
+.section-title2 {display:block; }
+.section-title2 h2 {position:relative; line-height:48px; color:#333333; font-size:40px; font-weight:bold; margin:0px; padding-bottom:26px; font-family:"Roboto",sans-serif;}
+.section-title2 h2:after {position:absolute; bottom:0px; left:0px; width:100px; height:6px; background:#ffb241; content:""; }
+/*=-=-=-=-=-=-=-=-=-=-=- Section title end -=-=-=-=-=-=-=-=-=-=-=*/
+
+/*=-=-=-=-=-=-=-=-=-=-=- Contact Us Start -=-=-=-=-=-=-=-=-=-=-=*/
+.contact-detail {padding:50px 0; text-align:center; margin-left: 5px; width:100%;}
+.contact-detail .section-title {padding-bottom:40px; margin-left: 5px;}
+.contact-detail .contact-boxView {display:inline-block; width:100%; }
+.contact-detail .contact-box {border:solid 1px #e0e0e0; background:#f8f8f8; border-radius:5px; text-align:center; padding:0 10px 40px 10px; margin-top:40px; min-height:202px;}
+.contact-detail .contact-box .icon-box {display:inline-block; width:80px; height:80px; border-radius:50%; background:#eebd47; margin:-40px 0 40px 0;}
+.contact-detail .contact-box .icon-box .fa {display:block; text-align:center; line-height:80px; color:#fff; font-size:40px; }
+.contact-detail .contact-box.yello {border-bottom:solid 3px #eebd47;}
+.contact-detail .contact-box.yello .icon-box {background:#eebd47;}
+.contact-detail .contact-box.green {border-bottom:solid 3px #009E49;}
+.contact-detail .contact-box.green .icon-box {background:#009E49;}
+.contact-detail .contact-box.red {border-bottom:solid 3px #EF2B2D;}
+.contact-detail .contact-box.red .icon-box {background:#EF2B2D;}
+.contact-detail .contact-box h4 {display:block; text-align:center; font-family: 'Arima Madurai'; font-size:16px; line-height:20px; text-transform:uppercase; margin:0px 0 10px 0; color:#333; font-weight:bold;}
+.contact-lien-utile { text-align:left;}
+.contact-detail .contact-box p {width:100%; max-width:180px; font-size:14px; color:#666; line-height:24px; display:inline-block; margin:0px; }
+.contact-detail .contact-box p a {color:#666;}
+/*=-=-=-=-=-=-=-=-=-=-=- Contact Us end -=-=-=-=-=-=-=-=-=-=-=*/
+
+/*=-=-=-=-=-=-=-=-=-=-=- Breadcrumb start -=-=-=-=-=-=-=-=-=-=-=*/
+.breadcrumb {background:#f6f6f6; padding:15px 0; margin:0px; }
+.breadcrumb.white-bg {background:#fff;}
+.breadcrumb ul {padding:0px; margin:0px; }
+.breadcrumb ul li {list-style:none; position:relative; padding:0 15px 0 10px; display:inline-block;}
+.breadcrumb ul li:after {position:absolute; top:0px; right:0px; line-height:26px; color:#666; content:"\f105"; font-family:'FontAwesome';}
+.breadcrumb ul li:first-child {padding-left:0px;}
+.breadcrumb ul li:last-child:after {display:none;}
+.breadcrumb ul li a {line-height:26px; font-size:14px; color:#666; text-decoration:none; text-transform:uppercase;}
+.breadcrumb ul li:hover a {color:#e6b706; }
+/*=-=-=-=-=-=-=-=-=-=-=- Breadcrumb end -=-=-=-=-=-=-=-=-=-=-=*/
